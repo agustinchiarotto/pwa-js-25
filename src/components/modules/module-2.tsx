@@ -1,6 +1,5 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { CodeBlock } from "@/components/ui/code-block"
-import React from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { CodeBlock } from "../ui/code-block"
 
 export default function Module2() {
   return (

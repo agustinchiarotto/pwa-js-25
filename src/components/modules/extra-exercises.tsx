@@ -1,6 +1,3 @@
-import React from "react";
-import { CodeBlock } from "../ui/code-block"
-
 export default function ExtraExercises() {
   return (
     <div>
@@ -13,28 +10,12 @@ export default function ExtraExercises() {
             Escribí una función que reciba un string y devuelva otro string con solo las letras mayúsculas.
           </p>
 
-          <CodeBlock code={`extraerMayusculas("Hola Mundo!")
-extraerMayusculas("javascript")
-extraerMayusculas("NASA y SpaceX")
-extraerMayusculas("")
-// "HM"
-// ""
-// "NASA"
-// ""`} />
-
           <p className="mt-4">Resolver: a) con for b) con funciones nativas (filter, match, etc.)</p>
         </div>
 
         <div className="border rounded-lg p-6">
           <h3 className="text-xl font-bold mb-4">2. Duplicar letras</h3>
           <p className="mb-4">Escribí una función que reciba un string y duplique cada letra.</p>
-
-          <CodeBlock code={`duplicarLetras("Hola")
-duplicarLetras("123!?")
-duplicarLetras("")
-// "HHoollaa"
-// "112233!!??"
-// ""`} />
 
           <p className="mt-4">Bonus: que solo duplique letras, no números ni símbolos.</p>
         </div>
@@ -43,18 +24,12 @@ duplicarLetras("")
           <h3 className="text-xl font-bold mb-4">3. Palabra más frecuente</h3>
           <p className="mb-4">Dada una frase, devolvé la palabra que más veces aparece.</p>
 
-          <CodeBlock code={`palabraMasFrecuente("hola hola mundo cruel mundo cruel cruel")
-// "cruel"`} />
-
           <p className="mt-4">Ignorar mayúsculas/minúsculas y signos. Empate: devolver cualquiera.</p>
         </div>
 
         <div className="border rounded-lg p-6">
           <h3 className="text-xl font-bold mb-4">4. Reemplazo circular de letras</h3>
           <p className="mb-4">Escribí una función que reemplace cada letra por la que sigue en el abecedario.</p>
-
-          <CodeBlock code={`siguienteLetra("abcdz") // "bcdea"
-siguienteLetra("Zebra!") // "Afcsb!"`} />
 
           <p className="mt-4">
             Las letras deben seguir siendo minúsculas o mayúsculas. No modificar símbolos ni números. Z → A
@@ -80,13 +55,15 @@ siguienteLetra("Zebra!") // "Afcsb!"`} />
             <li>Mostrá el sueldo neto con un mensaje como: Tu sueldo final es $38.250</li>
           </ul>
 
-          <CodeBlock code={`// Ejemplo de uso:
-const sueldoBase = 40000;
-const tieneBonus = true;
-const tieneHijos = true;
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            const sueldoBase = 40000;
+            const tieneBonus = true;
+            const tieneHijos = true;
 
-// Resultado esperado:
-// Tu sueldo final es $38.250`} />
+            // Resultado esperado:
+            // Tu sueldo final es $38.250
+          </p>
         </div>
 
         <div className="border rounded-lg p-6">
@@ -106,24 +83,26 @@ const tieneHijos = true;
             <li>Es cliente "Nuevo" en cualquier otro caso</li>
           </ul>
 
-          <CodeBlock code={`// Ejemplo de uso:
-const compras = 12;
-const gasto = 65000;
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            const compras = 12;
+            const gasto = 65000;
 
-// Resultado esperado:
-// "Premium"
+            // Resultado esperado:
+            // "Premium"
 
-const compras2 = 7;
-const gasto2 = 35000;
+            const compras2 = 7;
+            const gasto2 = 35000;
 
-// Resultado esperado:
-// "Regular"
+            // Resultado esperado:
+            // "Regular"
 
-const compras3 = 3;
-const gasto3 = 15000;
+            const compras3 = 3;
+            const gasto3 = 15000;
 
-// Resultado esperado:
-// "Nuevo"`} />
+            // Resultado esperado:
+            // "Nuevo"
+          </p>
         </div>
 
         <div className="border rounded-lg p-6">
@@ -188,8 +167,11 @@ const gasto3 = 15000;
             Dado un string, reemplazá cada palabra por la cantidad de letras que tiene. Usá .split(), .map(), .join().
           </p>
 
-          <CodeBlock code={`reemplazarPorLongitud("Hola mundo cruel")   // "4 5 5"
-reemplazarPorLongitud("Esto es JS")         // "4 2 2"`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            reemplazarPorLongitud("Hola mundo cruel")   // "4 5 5"
+            reemplazarPorLongitud("Esto es JS")         // "4 2 2"
+          </p>
         </div>
 
         <div className="border rounded-lg p-6">
@@ -200,8 +182,11 @@ reemplazarPorLongitud("Esto es JS")         // "4 2 2"`} />
             primero las vocales, luego las consonantes, luego los números, luego todo lo demás (signos, espacios, etc)
           </p>
 
-          <CodeBlock code={`ordenarPorTipo("Hola123!?")  // "oaiHl123!?"
-ordenarPorTipo("JS 2025!")   // "oJS25 2!"`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            ordenarPorTipo("Hola123!?")  // "oaiHl123!?"
+            ordenarPorTipo("JS 2025!")   // "oJS25 2!"
+          </p>
         </div>
 
         <div className="border rounded-lg p-6">
@@ -211,8 +196,11 @@ ordenarPorTipo("JS 2025!")   // "oJS25 2!"`} />
             Escribí una función que transforme secuencias repetidas de letras en la letra seguida de la cantidad.
           </p>
 
-          <CodeBlock code={`comprimir("aaabbcaaa")   // "a3b2c1a3"
-comprimir("abcd")        // "a1b1c1d1"`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            comprimir("aaabbcaaa")   // "a3b2c1a3"
+            comprimir("abcd")        // "a1b1c1d1"
+          </p>
 
           <p className="mt-4">
             Bonus: que ignore mayúsculas/minúsculas (tratarlas igual)<br />
@@ -227,10 +215,13 @@ comprimir("abcd")        // "a1b1c1d1"`} />
             Escribí una función que reciba un string y devuelva true si tiene el formato "DD/MM/AAAA" y es una fecha válida.
           </p>
 
-          <CodeBlock code={`esFechaValida("12/05/2020")    // true
-esFechaValida("31/02/2020")    // false
-esFechaValida("01-01-2000")    // false
-esFechaValida("99/99/9999")    // false`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            esFechaValida("12/05/2020")    // true
+            esFechaValida("31/02/2020")    // false
+            esFechaValida("01-01-2000")    // false
+            esFechaValida("99/99/9999")    // false
+          </p>
 
           <p className="mt-4">Pista: podés usar split y crear un objeto Date</p>
         </div>
@@ -242,9 +233,12 @@ esFechaValida("99/99/9999")    // false`} />
             Escribí una función que reciba dos palabras y devuelva true si una es el reverso exacto de la otra. Ignorar mayúsculas/minusculas
           </p>
 
-          <CodeBlock code={`esEspejo("amor", "roma")     // false
-esEspejo("amor", "roma")     // false
-esEspejo("abc", "cba")       // true`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            esEspejo("amor", "roma")     // false
+            esEspejo("amor", "roma")     // false
+            esEspejo("abc", "cba")       // true
+          </p>
         </div>
 
         <div className="border rounded-lg p-6">
@@ -254,11 +248,14 @@ esEspejo("abc", "cba")       // true`} />
             Escribí una función que reciba un string y devuelva el carácter (letra o número) que más veces aparece. Si hay empate, devolver cualquiera.
           </p>
 
-          <CodeBlock code={`masFrecuente("aabbbccdd")     // "b"
-masFrecuente("111223")        // "1"
-masFrecuente("abcd")          // "a" (u otra, cualquiera)`} />
+          <p className="mt-4 mb-4">
+            // Ejemplo de uso:
+            masFrecuente("aabbbccdd")     // "b"
+            masFrecuente("111223")        // "1"
+            masFrecuente("abcd")          // "a" (u otra, cualquiera)
+          </p>
 
-          <p className="mt-4">Ignorá espacios y mayúsculas</p>
+          <p className="mt-4">Igná espacios y mayúsculas</p>
         </div>
       </div>
     </div>
