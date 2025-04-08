@@ -8,6 +8,7 @@ import Module5 from "./modules/module-5"
 import Module6 from "./modules/module-6"
 import Module7 from "./modules/module-7"
 import ExtraExercises from "./modules/extra-exercises"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export function MainContent() {
   return (
@@ -22,16 +23,26 @@ export function MainContent() {
       <ModuleIntroduction />
 
       <Tabs defaultValue="module1" className="w-full">
-        <TabsList className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 mb-8">
-          <TabsTrigger value="module1">Módulo 1</TabsTrigger>
-          <TabsTrigger value="module2">Módulo 2</TabsTrigger>
-          <TabsTrigger value="module3">Módulo 3</TabsTrigger>
-          <TabsTrigger value="module4">Módulo 4</TabsTrigger>
-          <TabsTrigger value="module5">Módulo 5</TabsTrigger>
-          <TabsTrigger value="module6">Módulo 6</TabsTrigger>
-          <TabsTrigger value="module7">Módulo 7</TabsTrigger>
-          <TabsTrigger value="extra">Ejercicios Extra</TabsTrigger>
-        </TabsList>
+        <div className="relative">
+          <div className="overflow-x-auto pb-2 mb-6 scrollbar-hide">
+            <TabsList className="flex flex-nowrap min-w-max p-1 bg-muted rounded-md">
+              <TabsTrigger value="module1" className="px-4 py-2 text-sm">Módulo 1</TabsTrigger>
+              <TabsTrigger value="module2" className="px-4 py-2 text-sm">Módulo 2</TabsTrigger>
+              <TabsTrigger value="module3" className="px-4 py-2 text-sm">Módulo 3</TabsTrigger>
+              <TabsTrigger value="module4" className="px-4 py-2 text-sm">Módulo 4</TabsTrigger>
+              <TabsTrigger value="module5" className="px-4 py-2 text-sm">Módulo 5</TabsTrigger>
+              <TabsTrigger value="module6" className="px-4 py-2 text-sm">Módulo 6</TabsTrigger>
+              <TabsTrigger value="module7" className="px-4 py-2 text-sm">Módulo 7</TabsTrigger>
+              <TabsTrigger value="extra" className="px-4 py-2 text-sm">Ejercicios Extra</TabsTrigger>
+            </TabsList>
+          </div>
+          <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent pointer-events-none flex items-center justify-center md:hidden">
+            <ChevronLeft className="h-5 w-5 text-muted-foreground" />
+          </div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none flex items-center justify-center md:hidden">
+            <ChevronRight className="h-5 w-5 text-muted-foreground" />
+          </div>
+        </div>
 
         <TabsContent value="module1" className="space-y-8">
           <Module1 />
