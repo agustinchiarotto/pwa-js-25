@@ -1,4 +1,6 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import React from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { CodeBlock } from "../ui/code-block"
 
 export default function Module7() {
   return (
@@ -65,11 +67,7 @@ export default function Module7() {
                       Si el nombre es válido, la promesa se resuelve en 2 segundos sumando un nivel a su nivel actual:
                     </p>
 
-                    <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                      <pre>
-                        const pokemon = {"{"} nombre: "Pikachu", nivel: 2 {"}"}
-                      </pre>
-                    </div>
+                    <CodeBlock code={`const pokemon = { nombre: "Pikachu", nivel: 2 }`} />
                   </li>
                   <li>
                     <p className="mb-2">
@@ -83,9 +81,7 @@ export default function Module7() {
                       </li>
                       <li>
                         Si llega al nivel 3, muestra:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>¡Pikachu evolucionó a Raichu!</pre>
-                        </div>
+                        <CodeBlock code={`¡Pikachu evolucionó a Raichu!`} />
                       </li>
                     </ul>
                   </li>
@@ -104,6 +100,12 @@ export default function Module7() {
                   <pre> .then(entrenar)</pre>
                   <pre> .catch(console.error);</pre>
                 </div>
+
+                <CodeBlock code={`entrenarPokemon("Pikachu")
+ .then(entrenar)
+ .then(entrenar)
+ .then(entrenar)
+ .catch(console.error);`} />
               </div>
 
               <div>
@@ -126,6 +128,8 @@ export default function Module7() {
                         {"{"} id: 1, nombre: "Obi-Wan", nivel: "Maestro" {"}"}
                       </pre>
                     </div>
+
+                    <CodeBlock code={`{ id: 1, nombre: "Obi-Wan", nivel: "Maestro" }`} />
                   </li>
                   <li>
                     <p className="mb-2">
@@ -142,6 +146,8 @@ export default function Module7() {
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>Jedi encontrado: Obi-Wan (Maestro)</pre>
                         </div>
+
+                        <CodeBlock code={`Jedi encontrado: Obi-Wan (Maestro)`} />
                       </li>
                     </ul>
                   </li>
@@ -176,6 +182,8 @@ export default function Module7() {
                         {"{"} id: 2, nombre: "Anakin", nivel: "Padawan" {"}"}
                       </pre>
                     </div>
+
+                    <CodeBlock code={`{ id: 2, nombre: "Anakin", nivel: "Padawan" }`} />
                   </li>
                   <li>
                     <p className="mb-2">
@@ -192,12 +200,16 @@ export default function Module7() {
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>Anakin pasó la prueba con sabiduría.</pre>
                         </div>
+
+                        <CodeBlock code={`Anakin pasó la prueba con sabiduría.`} />
                       </li>
                       <li>
                         Si es "Padawan" → muestra:
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>Anakin necesita más entrenamiento.</pre>
                         </div>
+
+                        <CodeBlock code={`Anakin necesita más entrenamiento.`} />
                       </li>
                     </ul>
                   </li>
@@ -234,6 +246,9 @@ export default function Module7() {
                         {"{"} nombre: "Flareon", evolucionado: true {"}"}
                       </pre>
                     </div>
+
+                    <CodeBlock code={`usarPiedraEvolutiva({ nombre: "Eevee" }, "piedraFuego") →
+{ nombre: "Flareon", evolucionado: true }`} />
                   </li>
                   <li>
                     <p className="mb-2">Si no es compatible, se rechaza con:</p>
@@ -241,6 +256,8 @@ export default function Module7() {
                     <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
                       <pre>Eevee no puede evolucionar con piedraLunar.</pre>
                     </div>
+
+                    <CodeBlock code={`Eevee no puede evolucionar con piedraLunar.`} />
                   </li>
                   <li>
                     <p className="mb-2">
@@ -258,6 +275,8 @@ export default function Module7() {
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>Eevee ha evolucionado a Flareon con la piedra Fuego.</pre>
                         </div>
+
+                        <CodeBlock code={`Eevee ha evolucionado a Flareon con la piedra Fuego.`} />
                       </li>
                       <li>Si falla, mostrar el error capturado.</li>
                     </ul>
@@ -276,6 +295,15 @@ export default function Module7() {
                   <pre> {"}"}</pre>
                   <pre>{"};"}</pre>
                 </div>
+
+                <CodeBlock code={`const evoluciones = {
+ Eevee: {
+ piedraFuego: "Flareon", piedraAgua: "Vaporeon", piedraTrueno: "Jolteon"
+ },
+ Pikachu: {
+ piedraTrueno: "Raichu"
+ }
+};`} />
               </div>
 
               <div>
@@ -303,6 +331,12 @@ export default function Module7() {
                   <pre> console.log(data.results); // array de personajes</pre>
                   <pre>{"}"}</pre>
                 </div>
+
+                <CodeBlock code={`async function obtenerPersonajes() {
+ const respuesta = await fetch("https://swapi.dev/api/people");
+ const data = await respuesta.json();
+ console.log(data.results); // array de personajes
+}`} />
 
                 <p className="mt-4 mb-2">
                   Todos los recursos están paginados. Si necesitás más de 10 resultados, tendrás que recorrer{" "}
@@ -341,6 +375,10 @@ export default function Module7() {
                           <pre>Leia Organa - Altura: 150cm</pre>
                           <pre>...</pre>
                         </div>
+
+                        <CodeBlock code={`Luke Skywalker - Altura: 172cm
+Leia Organa - Altura: 150cm
+...`} />
                       </li>
                     </ul>
                   </div>
@@ -361,6 +399,8 @@ export default function Module7() {
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>Luke Skywalker vive en Tatooine</pre>
                         </div>
+
+                        <CodeBlock code={`Luke Skywalker vive en Tatooine`} />
                       </li>
                     </ul>
                   </div>
@@ -389,6 +429,8 @@ export default function Module7() {
                         <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
                           <pre>La nave más grande es: Executor (longitud: 19000)</pre>
                         </div>
+
+                        <CodeBlock code={`La nave más grande es: Executor (longitud: 19000)`} />
                       </li>
                     </ul>
                   </div>

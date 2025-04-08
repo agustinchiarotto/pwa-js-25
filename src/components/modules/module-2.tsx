@@ -1,4 +1,6 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { CodeBlock } from "@/components/ui/code-block"
+import React from "react"
 
 export default function Module2() {
   return (
@@ -29,7 +31,6 @@ export default function Module2() {
                 ¿Para qué sirve el operador ternario (condición ? a : b)? Reescribí un if simple con este operador.
               </li>
               <li>¿Cómo funcionan los bucles for y while en JavaScript? Mostrá un ejemplo de cada uno.</li>
-              <li>¿Qué hacen break y continue dentro Mostrá un ejemplo de cada uno.</li>
               <li>¿Qué hacen break y continue dentro de un bucle? ¿Qué efecto tienen en la ejecución del código?</li>
             </ol>
           </AccordionContent>
@@ -41,48 +42,63 @@ export default function Module2() {
           <AccordionTrigger className="text-xl font-semibold">Preguntas Prácticas</AccordionTrigger>
           <AccordionContent>
             <div className="space-y-8">
-              <div>
-                <p className="mb-2">Tenés dos variables:</p>
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>const edad;</pre>
-                  <pre>const tieneAutorizacion;</pre>
-                </div>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">1. Validador de edad para cine</h3>
+                <p className="mb-4">Tenés dos variables:</p>
+                <CodeBlock code={`const edad;
+const tieneAutorizacion;`} />
 
-                <p className="mt-4">
+                <p className="mb-4">
                   Escribí un programa que pida al usuario su edad y muestre "Puede entrar al cine" si la persona tiene
                   18 o más años. En caso contrario, mostrar "No puede entrar".
                 </p>
+
+                <CodeBlock code={`const edad = Number(prompt("¿Cuál es tu edad?"));
+if (edad >= 18) {
+  console.log("Puede entrar al cine");
+} else {
+  console.log("No puede entrar");
+}`} />
               </div>
 
-              <div>
-                <p className="mb-2">
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">2. Calculadora de propina</h3>
+                <p className="mb-4">
                   Simula que tenés una cuenta de un restaurante y queres calcular la propina. Declarar una variable
                   monto, pedirle al usuario que ingrese un valor y calcular la propina del 10%.
                 </p>
-                <p>Mostrá un mensaje como: "El total es $100. La propina sugerida es $10"</p>
+                <p className="mb-4">Mostrá un mensaje como: "El total es $100. La propina sugerida es $10"</p>
+
+                <CodeBlock code={`const monto = Number(prompt("¿Cuál es el monto de la cuenta?"));
+const propina = monto * 0.1;
+console.log(\`El total es $\${monto}. La propina sugerida es $\${propina}\`);`} />
               </div>
 
-              <div>
-                <p className="mb-2">
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">3. Predicción de operaciones</h3>
+                <p className="mb-4">
                   Predecí y explicá el resultado de cada expresión. Luego ejecuta el código en la consola y compara con
-                  tu predicción
+                  tu predicción.
                 </p>
 
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>console.log(10 + "190"); // ?</pre>
-                  <pre>console.log("8" * "4"); // ?</pre>
-                  <pre>console.log(true + false); // ?</pre>
-                  <pre>console.log(null + 1); // ?</pre>
-                  <pre>console.log(undefined + 1); // ?</pre>
-                </div>
+                <CodeBlock code={`console.log(10 + "190"); // ?
+console.log("8" * "4"); // ?
+console.log(true + false); // ?
+console.log(null + 1); // ?
+console.log(undefined + 1); // ?`} />
+
+                <p className="mt-4">
+                  <strong>Pistas:</strong> Pensá en la coerción de tipos y cómo JavaScript maneja las operaciones entre
+                  diferentes tipos de datos.
+                </p>
               </div>
 
-              <div>
-                <h3 className="font-bold text-lg mb-2">4. Validador de ingreso a un club secreto</h3>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">4. Validador de ingreso a un club secreto</h3>
 
-                <p className="mb-2">Pedile al usuario su edad y si conoce la "palabra clave".</p>
+                <p className="mb-4">Pedile al usuario su edad y si conoce la "palabra clave".</p>
 
-                <p className="mb-2">Solo puede ingresar si:</p>
+                <p className="mb-4">Solo puede ingresar si:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
                     Tiene <strong>21 años o más</strong>
@@ -93,27 +109,25 @@ export default function Module2() {
                   </li>
                 </ul>
 
-                <p className="mt-4 mb-2">Mostrá un mensaje acorde:</p>
+                <p className="mt-4 mb-4">Mostrá un mensaje acorde:</p>
 
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>const edad = Number(prompt("¿Cuál es tu edad?"));</pre>
-                  <pre>const clave = prompt("Decí la palabra clave:");</pre>
-                  <pre></pre>
-                  <pre>// tu código acá</pre>
-                </div>
+                <CodeBlock code={`const edad = Number(prompt("¿Cuál es tu edad?"));
+const clave = prompt("Decí la palabra clave:");
+
+// tu código acá`} />
               </div>
 
-              <div>
-                <h3 className="font-bold text-lg mb-2">7. Simulador de sueldo con bonus y retenciones</h3>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">5. Simulador de sueldo con bonus y retenciones</h3>
 
-                <p className="mb-2">Pedile al usuario:</p>
+                <p className="mb-4">Pedile al usuario:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Su sueldo base (prompt)</li>
                   <li>Si tiene bonus (sí o no)</li>
                   <li>Si tiene hijos (sí o no)</li>
                 </ul>
 
-                <p className="mt-4 mb-2">Lógica:</p>
+                <p className="mt-4 mb-4">Lógica:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Si tiene bonus, sumá un 10% al sueldo.</li>
                   <li>Si tiene hijos, restá un 5% por aporte familiar.</li>
@@ -126,16 +140,16 @@ export default function Module2() {
                 </p>
               </div>
 
-              <div>
-                <h3 className="font-bold text-lg mb-2">8. Clasificador de clientes premium</h3>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">6. Clasificador de clientes premium</h3>
 
-                <p className="mb-2">Pedile al usuario:</p>
+                <p className="mb-4">Pedile al usuario:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Cantidad de compras que hizo este mes</li>
                   <li>Monto total gastado</li>
                 </ul>
 
-                <p className="mt-4 mb-2">Condiciones:</p>
+                <p className="mt-4 mb-4">Condiciones:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
                     Es cliente "Premium" si hizo <strong>más de 10 compras</strong> y gastó{" "}

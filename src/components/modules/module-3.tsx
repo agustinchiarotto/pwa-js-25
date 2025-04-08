@@ -1,4 +1,6 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { CodeBlock } from "@/components/ui/code-block"
+import React from "react"
 
 export default function Module3() {
   return (
@@ -33,8 +35,9 @@ export default function Module3() {
           <AccordionTrigger className="text-xl font-semibold">Preguntas Prácticas</AccordionTrigger>
           <AccordionContent>
             <div className="space-y-8">
-              <div>
-                <p className="mb-2">
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">1. Calculadora de daño</h3>
+                <p className="mb-4">
                   Creá una función{" "}
                   <code className="bg-muted-foreground/20 px-1 rounded">calcularDanio(ataque, defensa, critico)</code>{" "}
                   que reciba:
@@ -53,21 +56,20 @@ export default function Module3() {
                   </li>
                 </ul>
 
-                <p className="mt-4 mb-2">Si el resultado es menor a 0, debe devolver 0.</p>
+                <p className="mt-4 mb-4">Si el resultado es menor a 0, debe devolver 0.</p>
 
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>calcularDanio(50, 30, true) // → 70</pre>
-                </div>
+                <CodeBlock code={`calcularDanio(50, 30, true) // → 70`} />
               </div>
 
-              <div>
-                <p className="mb-2">
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">2. Evolución de Pokémon</h3>
+                <p className="mb-4">
                   Creá una función{" "}
                   <code className="bg-muted-foreground/20 px-1 rounded">puedeEvolucionar(nombre, nivel)</code> que
                   reciba el nombre del Pokémon y su nivel.
                 </p>
 
-                <p className="mt-4 mb-2">Reglas de evolución:</p>
+                <p className="mt-4 mb-4">Reglas de evolución:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
                     Si es <code className="bg-muted-foreground/20 px-1 rounded">"Charmander"</code> y nivel ≥ 16 →{" "}
@@ -88,10 +90,10 @@ export default function Module3() {
                 </ul>
               </div>
 
-              <div>
-                <h3 className="font-bold text-lg mb-2">3. Batalla Pokémon</h3>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">3. Batalla Pokémon</h3>
 
-                <p className="mb-2">
+                <p className="mb-4">
                   Creá una función{" "}
                   <code className="bg-muted-foreground/20 px-1 rounded">
                     batalla(atacante, defensor, ataque, poder, defensa, critico)
@@ -100,7 +102,7 @@ export default function Module3() {
                   <code className="bg-muted-foreground/20 px-1 rounded">calcularDanio del ejercicio 1.</code>
                 </p>
 
-                <p className="mt-4 mb-2">La función debe mostrar:</p>
+                <p className="mt-4 mb-4">La función debe mostrar:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>El mensaje del ataque. Ver formato en el ejemplo</li>
                   <li>
@@ -109,18 +111,17 @@ export default function Module3() {
                   </li>
                 </ul>
 
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>batalla("Pikachu", "Meowth", "Impactrueno", 70, 20, false);</pre>
-                  <pre></pre>
-                  <pre>¡Pikachu usó Impactrueno contra Meowth! Causó 50 de daño.</pre>
-                  <pre>¡Meowth ha sido derrotado!</pre>
-                </div>
+                <CodeBlock code={`batalla("Pikachu", "Meowth", "Impactrueno", 70, 20, false);
+
+// Resultado esperado:
+// ¡Pikachu usó Impactrueno contra Meowth! Causó 50 de daño.
+// ¡Meowth ha sido derrotado!`} />
               </div>
 
-              <div>
-                <h3 className="font-bold text-lg mb-2">4. Batalla por turnos con estrategia real</h3>
+              <div className="border rounded-lg p-6">
+                <h3 className="text-xl font-bold mb-4">4. Batalla por turnos con estrategia real</h3>
 
-                <p className="mb-2">
+                <p className="mb-4">
                   Simulá una batalla entre vos y un enemigo controlado por la computadora. El objetivo es ganar al final
                   de los 5 turnos teniendo más vida que el oponente.
                 </p>
@@ -189,22 +190,19 @@ export default function Module3() {
                   </table>
                 </div>
 
-                <p className="mt-4 mb-2">
+                <p className="mt-4 mb-4">
                   El daño se calcula usando la función que considera ataque, defensa y posibilidad de golpe crítico del
                   ejercicio 1.
                 </p>
 
-                <p className="mt-4 mb-2">Al final del turno se muestra un mensaje narrando lo ocurrido, por ejemplo:</p>
+                <p className="mt-4 mb-4">Al final del turno se muestra un mensaje narrando lo ocurrido, por ejemplo:</p>
 
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>Turno 3: Atacaste con 52. El enemigo se defendió con 40. ¡Le hiciste 12 de daño!</pre>
-                  <pre>
-                    Turno 4: Defendiste con 38. El enemigo atacó con 50. ¡Bloqueaste parte del daño! Recibiste 6.
-                  </pre>
-                </div>
+                <CodeBlock code={`// Ejemplo de mensajes de turno:
+// Turno 3: Atacaste con 52. El enemigo se defendió con 40. ¡Le hiciste 12 de daño!
+// Turno 4: Defendiste con 38. El enemigo atacó con 50. ¡Bloqueaste parte del daño! Recibiste 6.`} />
 
                 <h4 className="font-semibold mt-4 mb-2">Resultado final</h4>
-                <p className="mb-2">
+                <p className="mb-4">
                   Después de 5 turnos o cuando uno de los participantes pierda todos sus puntos de vida se muestra:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">

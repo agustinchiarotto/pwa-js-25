@@ -1,4 +1,6 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { CodeBlock } from "@/components/ui/code-block"
+import React from "react"
 
 export default function Module1() {
   return (
@@ -68,10 +70,8 @@ export default function Module1() {
                   <li>Para pedir un dato al usuario en la consola usa prompt();</li>
                 </ol>
 
-                <div className="mt-4 bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>const nombre = prompt("¿Cómo te llamás?");</pre>
-                  <pre>console.log("Hola, " + nombre);</pre>
-                </div>
+                <CodeBlock code={`const nombre = prompt("¿Cómo te llamás?");
+console.log("Hola, " + nombre);`} />
               </div>
 
               <div className="space-y-6">
@@ -83,12 +83,10 @@ export default function Module1() {
                     consola del navegador:
                   </p>
 
-                  <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                    <pre>let nombre = "Sofi";</pre>
-                    <pre>const edad = 22;</pre>
-                    <pre></pre>
-                    <pre>console.log("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");</pre>
-                  </div>
+                  <CodeBlock code={`let nombre = "Sofi";
+const edad = 22;
+
+console.log("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");`} />
 
                   <p className="mt-2">
                     Probá cambiar los valores. ¿Qué pasa si intentás reasignar{" "}
