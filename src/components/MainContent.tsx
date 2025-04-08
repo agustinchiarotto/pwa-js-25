@@ -78,7 +78,7 @@ export function MainContent() {
       </Tabs>
       
       <footer className="mt-16 text-center text-xs text-muted-foreground">
-        Developed by Agustin Chiarotto
+        Developed by <a href="https://www.linkedin.com/in/agustinchiarotto/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Agustin Chiarotto</a>
       </footer>
     </div>
   )
