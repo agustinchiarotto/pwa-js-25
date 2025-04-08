@@ -92,14 +92,6 @@ export default function Module7() {
                   </li>
                 </ol>
 
-                <div className="mt-4 bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>entrenarPokemon("Pikachu")</pre>
-                  <pre> .then(entrenar)</pre>
-                  <pre> .then(entrenar)</pre>
-                  <pre> .then(entrenar)</pre>
-                  <pre> .catch(console.error);</pre>
-                </div>
-
                 <CodeBlock code={`entrenarPokemon("Pikachu")
  .then(entrenar)
  .then(entrenar)
@@ -122,12 +114,6 @@ export default function Module7() {
                   <li>
                     <p className="mb-2">La función debe retornar un objeto como:</p>
 
-                    <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                      <pre>
-                        {"{"} id: 1, nombre: "Obi-Wan", nivel: "Maestro" {"}"}
-                      </pre>
-                    </div>
-
                     <CodeBlock code={`{ id: 1, nombre: "Obi-Wan", nivel: "Maestro" }`} />
                   </li>
                   <li>
@@ -142,10 +128,6 @@ export default function Module7() {
                       </li>
                       <li>
                         Muestre por consola:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Jedi encontrado: Obi-Wan (Maestro)</pre>
-                        </div>
-
                         <CodeBlock code={`Jedi encontrado: Obi-Wan (Maestro)`} />
                       </li>
                     </ul>
@@ -176,12 +158,6 @@ export default function Module7() {
                       un objeto:
                     </p>
 
-                    <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                      <pre>
-                        {"{"} id: 2, nombre: "Anakin", nivel: "Padawan" {"}"}
-                      </pre>
-                    </div>
-
                     <CodeBlock code={`{ id: 2, nombre: "Anakin", nivel: "Padawan" }`} />
                   </li>
                   <li>
@@ -196,18 +172,10 @@ export default function Module7() {
                       </li>
                       <li>
                         Si el Jedi es "Maestro" → muestra:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Anakin pasó la prueba con sabiduría.</pre>
-                        </div>
-
                         <CodeBlock code={`Anakin pasó la prueba con sabiduría.`} />
                       </li>
                       <li>
                         Si es "Padawan" → muestra:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Anakin necesita más entrenamiento.</pre>
-                        </div>
-
                         <CodeBlock code={`Anakin necesita más entrenamiento.`} />
                       </li>
                     </ul>
@@ -236,25 +204,11 @@ export default function Module7() {
                     <p className="mb-2">
                       Si el Pokémon puede evolucionar con esa piedra, se resuelve con el Pokémon evolucionado:
                     </p>
-                    <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                      <pre>
-                        usarPiedraEvolutiva({"{"} nombre: "Eevee" {"}"}, "piedraFuego") →
-                      </pre>
-                      <pre>
-                        {" "}
-                        {"{"} nombre: "Flareon", evolucionado: true {"}"}
-                      </pre>
-                    </div>
-
                     <CodeBlock code={`usarPiedraEvolutiva({ nombre: "Eevee" }, "piedraFuego") →
 { nombre: "Flareon", evolucionado: true }`} />
                   </li>
                   <li>
                     <p className="mb-2">Si no es compatible, se rechaza con:</p>
-
-                    <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                      <pre>Eevee no puede evolucionar con piedraLunar.</pre>
-                    </div>
 
                     <CodeBlock code={`Eevee no puede evolucionar con piedraLunar.`} />
                   </li>
@@ -271,10 +225,6 @@ export default function Module7() {
                       <li>Espere la evolución</li>
                       <li>
                         Si se logra, muestre:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Eevee ha evolucionado a Flareon con la piedra Fuego.</pre>
-                        </div>
-
                         <CodeBlock code={`Eevee ha evolucionado a Flareon con la piedra Fuego.`} />
                       </li>
                       <li>Si falla, mostrar el error capturado.</li>
@@ -283,17 +233,6 @@ export default function Module7() {
                 </ol>
 
                 <h4 className="font-semibold mt-6 mb-2">Datos sugeridos (se puede expandir)</h4>
-
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>const evoluciones = {"{"}</pre>
-                  <pre> Eevee: {"{"}</pre>
-                  <pre> piedraFuego: "Flareon", piedraAgua: "Vaporeon", piedraTrueno: "Jolteon"</pre>
-                  <pre> {"}"},</pre>
-                  <pre> Pikachu: {"{"}</pre>
-                  <pre> piedraTrueno: "Raichu"</pre>
-                  <pre> {"}"}</pre>
-                  <pre>{"};"}</pre>
-                </div>
 
                 <CodeBlock code={`const evoluciones = {
  Eevee: {
@@ -322,14 +261,6 @@ export default function Module7() {
                 <h4 className="font-semibold mt-4 mb-2">
                   ¿Cómo hacer un <span className="text-green-600 font-mono">fetch</span>?
                 </h4>
-
-                <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm">
-                  <pre>async function obtenerPersonajes() {"{"}</pre>
-                  <pre> const respuesta = await fetch("https://swapi.dev/api/people");</pre>
-                  <pre> const data = await respuesta.json();</pre>
-                  <pre> console.log(data.results); // array de personajes</pre>
-                  <pre>{"}"}</pre>
-                </div>
 
                 <CodeBlock code={`async function obtenerPersonajes() {
  const respuesta = await fetch("https://swapi.dev/api/people");
@@ -369,12 +300,6 @@ export default function Module7() {
                       <li>Obtené la lista de personajes.</li>
                       <li>
                         Mostrá los primeros 5 así:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Luke Skywalker - Altura: 172cm</pre>
-                          <pre>Leia Organa - Altura: 150cm</pre>
-                          <pre>...</pre>
-                        </div>
-
                         <CodeBlock code={`Luke Skywalker - Altura: 172cm
 Leia Organa - Altura: 150cm
 ...`} />
@@ -395,10 +320,6 @@ Leia Organa - Altura: 150cm
                       </li>
                       <li>
                         Mostrá:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>Luke Skywalker vive en Tatooine</pre>
-                        </div>
-
                         <CodeBlock code={`Luke Skywalker vive en Tatooine`} />
                       </li>
                     </ul>
@@ -425,10 +346,6 @@ Leia Organa - Altura: 150cm
                       </li>
                       <li>
                         Mostrá:
-                        <div className="bg-zinc-800 text-zinc-200 p-4 rounded-md font-mono text-sm mt-2">
-                          <pre>La nave más grande es: Executor (longitud: 19000)</pre>
-                        </div>
-
                         <CodeBlock code={`La nave más grande es: Executor (longitud: 19000)`} />
                       </li>
                     </ul>

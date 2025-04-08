@@ -76,6 +76,10 @@ export function MainContent() {
           <ExtraExercises />
         </TabsContent>
       </Tabs>
+      
+      <footer className="mt-16 text-center text-xs text-muted-foreground">
+        Developed by Agustin Chiarotto
+      </footer>
     </div>
   )
 } 
